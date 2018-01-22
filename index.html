@@ -17,19 +17,22 @@
   </header>
 
   <main id="maincontent">
-    <section id="map-container">
+    <section id="map-container" aria-labelledby="map-title">
       <div id="map"></div>
     </section>
     <section>
-      <div class="filter-options">
-        <h2>Filter Results</h2>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+      <div class="filter-options" aria-labelledby="filter-results">
+        <h2 id="filter-results">Filter Results</h2>
+        <select id="neighborhoods-select" tabindex="-1" name="neighborhoods" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
         <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
           <option value="all">All Cuisines</option>
         </select>
       </div>
+    </section>
+    <section id="filtered-restaurants" aria-labelledby="restaurant-list-title">
+      <h2 id="restaurant-list-title" class="offscreen">Restaurants list</h2>
       <ul id="restaurants-list"></ul>
     </section>
   </main>
